@@ -1,32 +1,44 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../assets/logo.png';
-import '../App.css';
+import logo from '../path/to/logo.png';
 
-const Navbar = () => (
-  <header>
-    <div className="header-container">
-      <div className="header-left">
-        <div className="logo-container">
-          <img src={logo} className="logo" alt="header logo" />
-          <h1 className="header-title">Space Travelars Hub</h1>
+const Navbar = () => {
+  return (
+    <header className="bg-white py-5 px-16 border-b border-gray-300">
+      <div className="container mx-auto flex items-center justify-between">
+        <div className="header-left flex items-center">
+          <div className="logo-container flex">
+            <img src={logo} alt="Logo" className="w-15 h-15" />
+            <h1 className="header-title font-montserrat text-2xl font-bold ml-2">Your Title</h1>
+          </div>
         </div>
         <nav>
-          <ul className="links">
-            <li>
-              <NavLink to="/" className={({ isActive }) => (isActive ? 'active-link' : '')}>Rockets</NavLink>
+          <ul className="flex list-none">
+            <li className="ml-5">
+              <NavLink to="/" className="text-blue-600 font-montserrat hover:underline" activeClassName="active-link">
+                Home
+              </NavLink>
             </li>
-            <li>
-              <NavLink to="missions" className={({ isActive }) => (isActive ? 'active-link' : '')}>Missions</NavLink>
+            <li className="ml-5">
+              <NavLink to="/missions" className="text-blue-600 font-montserrat hover:underline" activeClassName="active-link">
+                Missions
+              </NavLink>
             </li>
-            <span className="nav-span" />
-            <li>
-              <NavLink to="myprofile" className={({ isActive }) => (isActive ? 'active-link' : '')}>My Profile</NavLink>
+            <li className="ml-5">
+              <NavLink to="/rockets" className="text-blue-600 font-montserrat hover:underline" activeClassName="active-link">
+                Rockets
+              </NavLink>
+            </li>
+            <li className="ml-5">
+              <NavLink to="/myprofile" className="text-blue-600 font-montserrat hover:underline" activeClassName="active-link">
+                My Profile
+              </NavLink>
             </li>
           </ul>
         </nav>
       </div>
-    </div>
-  </header>
-);
+    </header>
+  );
+};
 
 export default Navbar;
