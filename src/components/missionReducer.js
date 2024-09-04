@@ -1,17 +1,14 @@
-// Initial state for the reducer
 const initialState = {
-    missions: [], // Initialize missions as an empty array
+    missions: [],
   };
-  
-  // Mission reducer function
+
   const missionReducer = (state = initialState, action) => {
     switch (action.type) {
       case 'SET_MISSIONS':
         return {
           ...state,
-          missions: action.payload, // Ensure payload is an array of missions
+          missions: action.payload,
         };
-      // Include additional cases here if needed...
       default:
         return state;
     }
