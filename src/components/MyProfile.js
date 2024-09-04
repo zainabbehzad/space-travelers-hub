@@ -1,5 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import './Profile.css';
+
 
 const MyProfile = () => {
   const { rocketData } = useSelector((state) => state.rockets);
