@@ -9,6 +9,7 @@ import MyProfile from './components/MyProfile';
 import { getDataFromServer } from './redux/Rockets/RocketsSlice';
 import './index.css';
 import Navbar from './components/Navbar';
+import Dragons from './components/Dragons'; 
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ function App() {
           <Route path="/" element={<Rockets />} />
           <Route path="/missions" element={<Missions />} />
           <Route path="/myprofile" element={<MyProfile />} />
+          <Route path="/dragons" element={<Dragons />} />
         </Routes>
       </Router>
     </div>
