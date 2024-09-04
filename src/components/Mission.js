@@ -1,6 +1,7 @@
+// src/components/Mission.js
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { join, leave } from '../redux/missions/missionSlice';
+import { join, leave } from '../redux/missions/missionSlice'; // Import actions
 
 const Mission = (props) => {
   const {
@@ -9,11 +10,11 @@ const Mission = (props) => {
   const dispatch = useDispatch();
   
   const missionJoin = (id) => {
-    dispatch(join(id));
+    dispatch(join(id)); // Dispatch join action
   };
 
   const missionLeave = (id) => {
-    dispatch(leave(id));
+    dispatch(leave(id)); // Dispatch leave action
   };
 
   return (
@@ -59,4 +60,4 @@ Mission.propTypes = {
   description: PropTypes.string.isRequired,
 };
 
-export default Mission;
+export default Mission;

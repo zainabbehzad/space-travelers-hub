@@ -1,43 +1,31 @@
+// src/redux/missions/missionSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-export const fetchMissions = createAsyncThunk(
-  'missions/fetchMissions',
-  async () => {
-    const res = await fetch('https://api.spacexdata.com/v3/missions');
-    const fetchedData = await res.json();
-    return fetchedData.map((mission) => ({
-      mission_id: mission.mission_id,
-      mission_name: mission.mission_name,
-      description: mission.description,
-    }));
-  },
-);
+// Define an async thunk to fetch missions
+export const fetchMissions = createAsyncThunk('missions/fetchMissions', async () => {
+  const response = await fetch('https://api.spacexdata.com/v3/missions');
+  return response.json();
+});
 
-const initialState = {
-  missions: [],
-  status: 'idle',
-  error: null,
-};
-
-const missionsSlice = createSlice({
+const missionSlice = createSlice({
   name: 'missions',
-  initialState,
+  initialState: {
+    missions: [],
+    status: 'idle', // idle, loading, succeeded, failed
+    error: null,
+  },
   reducers: {
     join: (state, action) => {
-      state.missions = state.missions.map((mission) => {
-        if (mission.mission_id !== action.payload) {
-          return mission;
-        }
-        return { ...mission, reserved: true };
-      });
+      const mission = state.missions.find((mission) => mission.mission_id === action.payload);
+      if (mission) {
+        mission.reserved = true;
+      }
     },
     leave: (state, action) => {
-      state.missions = state.missions.map((mission) => {
-        if (mission.mission_id !== action.payload) {
-          return mission;
-        }
-        return { ...mission, reserved: false };
-      });
+      const mission = state.missions.find((mission) => mission.mission_id === action.payload);
+      if (mission) {
+        mission.reserved = false;
+      }
     },
   },
   extraReducers: (builder) => {
@@ -47,7 +35,7 @@ const missionsSlice = createSlice({
       })
       .addCase(fetchMissions.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.missions = action.payload;
+        state.missions = action.payload.map((mission) => ({ ...mission, reserved: false }));
       })
       .addCase(fetchMissions.rejected, (state, action) => {
         state.status = 'failed';
@@ -55,5 +43,10 @@ const missionsSlice = createSlice({
       });
   },
 });
-export const { join, leave } = missionsSlice.actions;
-export default missionsSlice.reducer;
+
+// Export actions
+export const { join, leave } = missionSlice.actions;
+
+// Export reducer
+export default missionSlice.reducer;
+
