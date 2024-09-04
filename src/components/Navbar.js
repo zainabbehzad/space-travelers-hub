@@ -11,21 +11,30 @@ const Navbar = () => (
           <h1 className="header-title text-xl font-bold ml-2">Space Travelers Hub</h1>
         </div>
         <nav>
-          <ul className="links flex space-x-4 list-none">
-            <li>
-              <NavLink to="/" className={({ isActive }) => `text-gray-700 hover:text-blue-500 ${isActive ? 'font-semibold' : ''}`}>
+          <ul className="links flex space-x-6 list-none">
+            <li className="relative">
+              <NavLink 
+                to="/" 
+                className={({ isActive }) => `inline-block ${isActive ? 'font-semibold' : ''} text-blue-600 hover:text-blue-800 hover:underline`}>
                 Rockets
               </NavLink>
+              <span className="absolute left-0 bottom-0 w-full h-1 bg-black scale-x-0 transition-transform duration-300 hover:scale-x-100" />
             </li>
-            <li>
-              <NavLink to="/missions" className={({ isActive }) => `text-gray-700 hover:text-blue-500 ${isActive ? 'font-semibold' : ''}`}>
+            <li className="relative">
+              <NavLink 
+                to="/missions" 
+                className={({ isActive }) => `inline-block ${isActive ? 'font-semibold' : ''} text-blue-600 hover:text-blue-800 hover:underline`}>
                 Missions
               </NavLink>
+              <span className="absolute left-0 bottom-0 w-full h-1 bg-black scale-x-0 transition-transform duration-300 hover:scale-x-100" />
             </li>
-            <li>
-              <NavLink to="/myprofile" className={({ isActive }) => `text-gray-700 hover:text-blue-500 ${isActive ? 'font-semibold' : ''}`}>
+            <li className="relative">
+              <NavLink 
+                to="/myprofile" 
+                className={({ isActive }) => `inline-block ${isActive ? 'font-semibold' : ''} text-blue-600 hover:text-blue-800 hover:underline`}>
                 My Profile
               </NavLink>
+              <span className="absolute left-0 bottom-0 w-full h-1 bg-black scale-x-0 transition-transform duration-300 hover:scale-x-100" />
             </li>
           </ul>
         </nav>
@@ -33,5 +42,6 @@ const Navbar = () => (
     </div>
   </header>
 );
+
 
 export default Navbar;
