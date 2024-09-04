@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import Rockets from './components/Rockets';
 import Missions from './components/Missions';
 import MyProfile from './components/MyProfile';
-import { getDataFromServer } from './redux/Rockets/RocketsSlice';
+import { getDataFromServer } from './redux/Rockets/RocketSlice';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 
