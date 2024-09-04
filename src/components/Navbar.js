@@ -1,44 +1,41 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import logo from '../assets/logo.png'; // Adjust based on the actual path
+import { useSelector } from 'react-redux';
+import './Profile.css';
 
-const Navbar = () => {
+const MyProfile = () => {
+  const { rocketData } = useSelector((state) => state.rockets);
+  const filterRockets = rocketData.filter((rocket) => rocket.reserved);
+  const missionData = useSelector((state) => state.missions.missions);
+  const filterMissions = missionData.filter((mission) => mission.reserved);
+
   return (
-    <header className="bg-white py-5 px-16 border-b border-gray-300">
-      <div className="container mx-auto flex items-center justify-between">
-        <div className="header-left flex items-center">
-          <div className="logo-container flex">
-            <img src={logo} alt="Logo" className="w-15 h-15" />
-            <h1 className="header-title font-montserrat text-2xl font-bold ml-2">Your Title</h1>
-          </div>
-        </div>
-        <nav>
-          <ul className="flex list-none">
-            <li className="ml-5">
-              <NavLink to="/" className="text-blue-600 font-montserrat hover:underline" activeClassName="active-link">
-                Home
-              </NavLink>
-            </li>
-            <li className="ml-5">
-              <NavLink to="/missions" className="text-blue-600 font-montserrat hover:underline" activeClassName="active-link">
-                Missions
-              </NavLink>
-            </li>
-            <li className="ml-5">
-              <NavLink to="/rockets" className="text-blue-600 font-montserrat hover:underline" activeClassName="active-link">
-                Rockets
-              </NavLink>
-            </li>
-            <li className="ml-5">
-              <NavLink to="/myprofile" className="text-blue-600 font-montserrat hover:underline" activeClassName="active-link">
-                My Profile
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
+    <div className="profile" style={{ marginTop: '60px' }}> {/* Added margin-top */}
+      <div className="mission-card">
+        <h2 className="title-p">My Missions</h2>
+        <ul className="profile-card">
+          {filterMissions.length > 0 ? (
+            filterMissions.map((mission) => (
+              <li key={mission.mission_id} className="ul-list-item">{mission.mission_name}</li>
+            ))
+          ) : (
+            <li>No reserved missions</li>
+          )}
+        </ul>
       </div>
-    </header>
+      <div className="rocket-card">
+        <h2 className="title-p">My Rockets</h2>
+        <ul className="profile-card">
+          {filterRockets.length > 0 ? (
+            filterRockets.map((rocket) => (
+              <li key={rocket.id} className="ul-list-item">{rocket.name}</li>
+            ))
+          ) : (
+            <li>No reserved rockets</li>
+          )}
+        </ul>
+      </div>
+    </div>
   );
 };
 
-export default Navbar;
+export default MyProfile;
