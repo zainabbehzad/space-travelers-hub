@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png';
-import '../App.css'; // Keep your custom styles if needed
+import '../App.css';
 
 const Navbar = () => (
   <header className="bg-white shadow">
