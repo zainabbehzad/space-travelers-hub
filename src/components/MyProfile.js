@@ -6,7 +6,7 @@ const MyProfile = () => {
   const filterRockets = rocketData.filter((rocket) => rocket.reserved);
   const missionData = useSelector((state) => state.missions.missions);
   const filterMissions = missionData.filter((mission) => mission.reserved);
-  const dragonData = useSelector((state) => state.dragons.dragons); // Access dragons from state
+  const dragonData = useSelector((state) => state.dragons.dragons);
   const filterDragons = dragonData.filter((dragon) => dragon.reserved); // Filter reserved dragons
 
   return (
