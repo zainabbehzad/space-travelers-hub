@@ -1,29 +1,41 @@
-import { NavLink } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import './Profile.css';
 
-const Navbar = () => (
-  <header className="bg-white bg-opacity-70 backdrop-blur-lg fixed top-0 left-0 w-full z-10 shadow-lg">
-    <div className="container mx-auto px-4 flex justify-between items-center py-4">
-      <div className="flex items-center">
-        <img src={logo} className="h-10 w-10" alt="header logo" />
-        <h1 className="text-xl font-bold ml-2">Space Travelers' Hub</h1>
-      </div>
-      <nav>
-        <ul className="flex space-x-6 list-none">
-          {["/", "/missions", "/myprofile", "/dragons"].map((path, index) => (
-            <li key={index} className="relative flex items-center group">
-              <NavLink 
-                to={path} 
-                className={({ isActive }) => `inline-block ${isActive ? 'font-semibold' : ''} text-blue-600 hover:text-blue-800 hover:underline`}>
-                {path === "/" ? "Rockets" : path.charAt(1).toUpperCase() + path.slice(2)}
-              </NavLink>
-              <span className="ml-2 h-6 border-l-2 border-transparent transition-all duration-300 group-hover:border-blue-600" />
-            </li>
-          ))}
+const MyProfile = () => {
+  const { rocketData } = useSelector((state) => state.rockets);
+  const filterRockets = rocketData.filter((rocket) => rocket.reserved);
+  const missionData = useSelector((state) => state.missions.missions);
+  const filterMissions = missionData.filter((mission) => mission.reserved);
+
+  return (
+    <div className="profile" style={{ marginTop: '60px' }}> {/* Added margin-top */}
+      <div className="mission-card">
+        <h2 className="title-p">My Missions</h2>
+        <ul className="profile-card">
+          {filterMissions.length > 0 ? (
+            filterMissions.map((mission) => (
+              <li key={mission.mission_id} className="ul-list-item">{mission.mission_name}</li>
+            ))
+          ) : (
+            <li>No reserved missions</li>
+          )}
         </ul>
-      </nav>
+      </div>
+      <div className="rocket-card">
+        <h2 className="title-p">My Rockets</h2>
+        <ul className="profile-card">
+          {filterRockets.length > 0 ? (
+            filterRockets.map((rocket) => (
+              <li key={rocket.id} className="ul-list-item">{rocket.name}</li>
+            ))
+          ) : (
+            <li>No reserved rockets</li>
+          )}
+        </ul>
+      </div>
     </div>
-  </header>
-);
+  );
+};
 
-export default Navbar;
+export default MyProfile;
