@@ -7,11 +7,6 @@ import Rockets from './components/Rockets';
 import Missions from './components/Missions';
 import MyProfile from './components/MyProfile';
 import { getDataFromServer } from './redux/Rockets/RocketSlice';
-<<<<<<< HEAD
-import './index.css';
-=======
-import 'bootstrap/dist/css/bootstrap.min.css';
->>>>>>> f89da7db90a82c063cb36fa2ecbf7d096d78ed05
 import Navbar from './components/Navbar';
 
 function App() {
