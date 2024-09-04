@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDataFromServer } from '../redux/Rockets/RocketsSlice';
+import { getDataFromServer } from '../redux/Rocket/RocketSlice';
 import Rockets from './Rockets'; // Assuming this is where the Rockets component is defined
 
 const RocketsContainer = () => {

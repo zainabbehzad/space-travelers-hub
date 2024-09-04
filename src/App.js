@@ -6,8 +6,8 @@ import { useEffect } from 'react';
 import Rockets from './components/Rockets';
 import Missions from './components/Missions';
 import MyProfile from './components/MyProfile';
-import { getDataFromServer } from './redux/Rockets/RocketsSlice';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { getDataFromServer } from './redux/Rockets/RocketSlice';
+import './index.css';
 import Navbar from './components/Navbar';
 
 function App() {
