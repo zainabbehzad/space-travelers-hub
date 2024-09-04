@@ -1,3 +1,5 @@
+
+
 *,
 *::before,
 *::after {
@@ -7,7 +9,7 @@
 }
 
 header {
-  background-color: #fff;
+  background-color: #e6e6e6;
   padding: 20px 70px;
   border-bottom: 1px solid gray;
 }
@@ -52,18 +54,7 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: rgb(65, 65, 197);
   font-family: 'Montserrat', sans-serif;
-}
-
-.active-link {
-  text-decoration: underline;
-}
-
-.nav-span {
-  border-right: 3px solid #47a6a5;
-  padding-right: 10px;
-  height: 5px;
 }
 
 nav ul li a:hover {

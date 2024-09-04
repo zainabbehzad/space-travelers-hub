@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10%;
-    margin-top: 2%;
+    margin-top: 8%;
   }
   
   .profile-card {
@@ -23,4 +23,3 @@
   .ul-list-item:last-child {
     border-bottom: none;
   }
-  
