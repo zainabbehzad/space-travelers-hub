@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-
 const MyProfile = () => {
   const { rocketData } = useSelector((state) => state.rockets);
   const filterRockets = rocketData.filter((rocket) => rocket.reserved);
