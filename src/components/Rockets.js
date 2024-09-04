@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-import '../modules/Rocket.css';
 import RocketsItem from './RocketsItem';
 
 const Rockets = () => {

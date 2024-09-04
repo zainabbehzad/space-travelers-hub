@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../path/to/logo.png';
+import logo from '../assets/logo.png'; // Adjust based on the actual path
 
 const Navbar = () => {
   return (
