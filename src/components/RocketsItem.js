@@ -11,21 +11,23 @@ const RocketsItem = ({
   };
 
   return (
-    <li className="flex bg-white shadow-md rounded-lg p-4">
-      <img
-        className="w-64 h-auto rounded-lg mr-4"
-        alt="rocket"
-        src={image}
-      />
-      <div className="flex-1">
-        <p className="text-xl font-bold">{name}</p>
-        <p className="text-gray-700">
+    <li className="flex bg-white shadow-lg rounded-lg p-4 items-center">
+      <div className="w-2/5 flex-shrink-0">
+        <img
+          className="w-full h-auto rounded-lg object-cover"
+          alt={name}
+          src={image}
+        />
+      </div>
+      <div className="flex-1 ml-6">
+        <h2 className="text-xl font-semibold mb-2">{name}</h2>
+        <p className="text-gray-700 mb-4">
           {reserved && <span className="text-green-500 font-semibold">Reserved</span>}
-          {description}
+          <span className="ml-2">{description}</span>
         </p>
         <button
           onClick={() => reserveRockets(id)}
-          className={`mt-2 px-4 py-2 rounded-lg text-white ${reserved ? 'bg-red-500 hover:bg-red-600' : 'bg-blue-500 hover:bg-blue-600'}`}
+          className={`px-5 py-2 rounded-lg text-white ${reserved ? 'bg-red-500 hover:bg-red-600' : 'bg-blue-500 hover:bg-blue-600'}`}
           type="button"
         >
           {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
