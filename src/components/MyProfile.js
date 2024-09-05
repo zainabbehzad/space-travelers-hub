@@ -48,6 +48,7 @@ const MyProfile = () => {
           )}
         </ul>
       </div>
+      .
     </div>
   );
 };
