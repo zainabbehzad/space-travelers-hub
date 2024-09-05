@@ -25,10 +25,10 @@ function Missions() {
         <table className="min-w-full border-collapse">
           <thead className="bg-gray-200">
             <tr>
-              <th className="border px-4 py-2 text-left">Mission</th>
-              <th className="border px-4 py-2 text-left">Description</th>
-              <th className="border px-4 py-2 text-left">Status</th>
-              <th className="border px-4 py-2 text-left">Actions</th>
+              <th className="border px-2 sm:px-4 py-2 text-xs sm:text-sm text-left">Mission</th>
+              <th className="border px-2 sm:px-4 py-2 text-xs sm:text-sm text-left">Description</th>
+              <th className="border px-2 sm:px-4 py-2 text-xs sm:text-sm text-left">Status</th>
+              <th className="border px-2 sm:px-4 py-2 text-xs sm:text-sm text-left">Actions</th>
             </tr>
           </thead>
           <tbody>
