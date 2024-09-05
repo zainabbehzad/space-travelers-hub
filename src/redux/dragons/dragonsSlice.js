@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Async Thunk to fetch dragons data from SpaceX API
 export const fetchDragons = createAsyncThunk('dragons/fetchDragons', async () => {
   const response = await axios.get('https://api.spacexdata.com/v4/dragons');
   return response.data;

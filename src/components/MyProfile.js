@@ -7,11 +7,10 @@ const MyProfile = () => {
   const missionData = useSelector((state) => state.missions.missions);
   const filterMissions = missionData.filter((mission) => mission.reserved);
   const dragonData = useSelector((state) => state.dragons.dragons);
-  const filterDragons = dragonData.filter((dragon) => dragon.reserved); // Filter reserved dragons
+  const filterDragons = dragonData.filter((dragon) => dragon.reserved);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-[100px]">
-      {/* Updated to 3 columns */}
       <div className="mission-card">
         <h2 className="text-xl font-bold mb-4">My Missions</h2>
         <ul className="profile-card border border-gray-800 rounded-lg p-4">

@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchDragons, reserveDragon, cancelReservation } from '../redux/dragons/dragonsSlice';
 import logo from '../assets/logo.png';
 
-// Navbar Component
 const Navbar = () => (
   <header className="bg-white shadow">
     <div className="container mx-auto px-4 flex justify-between items-center">
@@ -32,7 +31,6 @@ const Navbar = () => (
   </header>
 );
 
-// Dragons Component
 const Dragons = () => {
   const dispatch = useDispatch();
   const { dragons, status, error } = useSelector((state) => state.dragons);
@@ -76,7 +74,7 @@ const Dragons = () => {
             />
             {dragon.reserved ? (
               <button
-                type="button" // Added type attribute
+                type="button"
                 onClick={() => handleCancel(dragon.id)}
                 className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 transition"
               >
@@ -84,7 +82,7 @@ const Dragons = () => {
               </button>
             ) : (
               <button
-                type="button" // Added type attribute
+                type="button"
                 onClick={() => handleReserve(dragon.id)}
                 className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
               >
@@ -98,5 +96,4 @@ const Dragons = () => {
   );
 };
 
-// Exporting both components
 export { Navbar, Dragons };
