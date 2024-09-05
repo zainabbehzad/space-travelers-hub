@@ -18,7 +18,7 @@ function Missions() {
 
   if (status === 'loading') {
     return <div className="text-center">Loading...</div>;
-  } 
+  }
 
   if (status === 'succeeded') {
     return (
@@ -46,7 +46,7 @@ function Missions() {
         </table>
       </div>
     );
-  } 
+  }
 
   if (status === 'failed') {
     return <div className="text-center text-red-500">Error loading missions.</div>;
