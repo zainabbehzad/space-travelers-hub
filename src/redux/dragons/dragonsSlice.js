@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Async Thunk to fetch dragons data from SpaceX API
 export const fetchDragons = createAsyncThunk('dragons/fetchDragons', async () => {
   const response = await axios.get('https://api.spacexdata.com/v4/dragons');
   return response.data;
@@ -16,13 +15,13 @@ const dragonsSlice = createSlice({
   },
   reducers: {
     reserveDragon: (state, action) => {
-      const dragon = state.dragons.find(dragon => dragon.id === action.payload);
+      const dragon = state.dragons.find((dragon) => dragon.id === action.payload);
       if (dragon) {
         dragon.reserved = true;
       }
     },
     cancelReservation: (state, action) => {
-      const dragon = state.dragons.find(dragon => dragon.id === action.payload);
+      const dragon = state.dragons.find((dragon) => dragon.id === action.payload);
       if (dragon) {
         dragon.reserved = false;
       }
@@ -35,7 +34,7 @@ const dragonsSlice = createSlice({
       })
       .addCase(fetchDragons.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.dragons = action.payload.map(dragon => ({
+        state.dragons = action.payload.map((dragon) => ({
           id: dragon.id,
           name: dragon.name,
           type: dragon.type,
@@ -47,7 +46,7 @@ const dragonsSlice = createSlice({
         state.status = 'failed';
         state.error = action.error.message;
       });
-  }
+  },
 });
 
 export const { reserveDragon, cancelReservation } = dragonsSlice.actions;

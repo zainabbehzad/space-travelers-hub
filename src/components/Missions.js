@@ -1,8 +1,7 @@
-// src/components/Missions.js
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
-import { fetchMissions } from '../redux/missions/missionSlice'; // Correct import path
+import { fetchMissions } from '../redux/missions/missionSlice';
 import Mission from './Mission';
 
 function Missions() {
@@ -12,13 +11,13 @@ function Missions() {
 
   useEffect(() => {
     if (status === 'idle') {
-      dispatch(fetchMissions()); // Correct action usage
+      dispatch(fetchMissions());
     }
   }, [status, dispatch]);
 
   if (status === 'loading') {
     return <div className="text-center">Loading...</div>;
-  } 
+  }
 
   if (status === 'succeeded') {
     return (
@@ -46,7 +45,7 @@ function Missions() {
         </table>
       </div>
     );
-  } 
+  }
 
   if (status === 'failed') {
     return <div className="text-center text-red-500">Error loading missions.</div>;
