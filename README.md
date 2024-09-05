@@ -7,7 +7,8 @@ The Space Travelers Hub is a web-based application built with React that allows 
 This project showcases the use of React components, Redux for state management, and user interactivity, making it an engaging tool for space enthusiasts. Users can easily navigate through different sections, reserve items, and visualize their choices in a fun and interactive way. 💻📝🚀
 
 Demo 📸
-![Screenshot (187)](https://github.com/user-attachments/assets/0fe0771b-8229-47c7-94b0-1286f8968b97)
+![Screenshot (202)](https://github.com/user-attachments/assets/cbac7eeb-8e6a-4031-b3f6-e410bddae268)
+
 
 
 Live Dem0:[https://drum-machine1-mzt8-dbbbmitly-zainab-behzads-projects.vercel.app/]
