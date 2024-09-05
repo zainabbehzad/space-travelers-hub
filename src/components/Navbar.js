@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false); // State to manage menu open/close
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -16,9 +16,10 @@ const Navbar = () => {
           <img src={logo} className="h-10 w-10" alt="Space Travelers Hub logo" />
           <h1 className="text-xl font-bold ml-2">Space Travelers Hub</h1>
         </div>
-        {/* Hamburger Icon */}
         <button
+          type="button"
           onClick={toggleMenu}
+          aria-label="Toggle navigation menu"
           className="sm:hidden flex items-center text-blue-600 focus:outline-none"
         >
           <svg
@@ -34,11 +35,11 @@ const Navbar = () => {
         {/* Navigation Links */}
         <nav className={`absolute sm:static left-0 w-full sm:w-auto bg-white shadow sm:bg-transparent transition-all duration-300 ${isOpen ? 'top-16' : 'top-[-100%]'}`}>
           <ul className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 list-none p-4 sm:p-0">
-            {['/', '/missions', '/myprofile', '/dragons'].map((path) => (
+            {['/', '/missions', '/dragons', '/myprofile'].map((path) => (
               <li key={path} className="relative flex items-center group">
                 <NavLink
                   to={path}
-                  onClick={() => setIsOpen(false)} // Close menu on link click
+                  onClick={() => setIsOpen(false)}
                   className={({ isActive }) => `inline-block ${isActive ? 'font-semibold' : ''} text-blue-600 hover:text-blue-800 hover:underline`}
                 >
                   {path === '/' ? 'Rockets' : path.charAt(1).toUpperCase() + path.slice(2)}
