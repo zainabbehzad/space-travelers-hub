@@ -5,17 +5,18 @@ const Navbar = () => (
   <header className="bg-white bg-opacity-70 backdrop-blur-lg fixed top-0 left-0 w-full z-10 shadow-lg">
     <div className="container mx-auto px-4 flex justify-between items-center py-4">
       <div className="flex items-center">
-        <img src={logo} className="h-10 w-10" alt="header logo" />
-        <h1 className="text-xl font-bold ml-2">Space Travelers' Hub</h1>
+        <img src={logo} className="h-10 w-10" alt="Space Travelers Hub logo" />
+        <h1 className="text-xl font-bold ml-2">Space Travelers Hub</h1>
       </div>
       <nav>
         <ul className="flex space-x-6 list-none">
-          {["/", "/missions", "/myprofile", "/dragons"].map((path, index) => (
-            <li key={index} className="relative flex items-center group">
-              <NavLink 
-                to={path} 
-                className={({ isActive }) => `inline-block ${isActive ? 'font-semibold' : ''} text-blue-600 hover:text-blue-800 hover:underline`}>
-                {path === "/" ? "Rockets" : path.charAt(1).toUpperCase() + path.slice(2)}
+          {['/', '/missions', '/myprofile', '/dragons'].map((path) => (
+            <li key={path} className="relative flex items-center group">
+              <NavLink
+                to={path}
+                className={({ isActive }) => `inline-block ${isActive ? 'font-semibold' : ''} text-blue-600 hover:text-blue-800 hover:underline`}
+              >
+                {path === '/' ? 'Rockets' : path.charAt(1).toUpperCase() + path.slice(2)}
               </NavLink>
               <span className="ml-2 h-6 border-l-2 border-transparent transition-all duration-300 group-hover:border-blue-600" />
             </li>
