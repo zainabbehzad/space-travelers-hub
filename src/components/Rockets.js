@@ -6,7 +6,7 @@ const Rockets = () => {
   const { loading, error, rocketData } = selectedData;
 
   return (
-    <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+    <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
       {loading && <p className="text-center text-lg">Loading...</p>}
       {error && <p className="text-red-500 text-center">Error...</p>}
       {!loading && !error && rocketData.map((rocket) => (
