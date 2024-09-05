@@ -18,8 +18,8 @@ header {
 
 .header-title {
   font-family:
-  'Montserrat',
-  sans-serif;
+    'Montserrat',
+    sans-serif;
   font-size: 1.9em;
   font-weight: bold;
   margin-top: 9px;
@@ -55,8 +55,8 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   font-family:
- 'Montserrat',
-  sans-serif;
+    'Montserrat',
+    sans-serif;
 }
 
 nav ul li a:hover {
