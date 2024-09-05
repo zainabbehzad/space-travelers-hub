@@ -1,6 +1,6 @@
 import {
-  BrowserRouter as Router, 
-  Route, 
+  BrowserRouter as Router,
+  Route,
   Routes,
 } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -11,12 +11,13 @@ import MyProfile from './components/MyProfile';
 import { getDataFromServer } from './redux/Rockets/RocketsSlice';
 import './index.css';
 import Navbar from './components/Navbar';
+import { Dragons } from './components/Dragons';
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getDataFromServer()); // Fetch rocket data on load
+    dispatch(getDataFromServer());
   }, [dispatch]);
 
   return (
@@ -24,7 +25,7 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Rockets />} />          {/* Default route for Rockets */}
+          <Route path="/" element={<Rockets />} />
           <Route path="/missions" element={<Missions />} />
           <Route path="/myprofile" element={<MyProfile />} />
           <Route path="/dragons" element={<Dragons />} />
