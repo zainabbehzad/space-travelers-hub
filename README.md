@@ -6,8 +6,12 @@ The Space Travelers Hub is a web-based application built with React that allows 
 
 This project showcases the use of React components, Redux for state management, and user interactivity, making it an engaging tool for space enthusiasts. Users can easily navigate through different sections, reserve items, and visualize their choices in a fun and interactive way. 💻📝🚀
 
+
+
+
 Demo 📸
 ![Screenshot (202)](https://github.com/user-attachments/assets/cbac7eeb-8e6a-4031-b3f6-e410bddae268)
+
 
 
 
@@ -28,28 +32,36 @@ Tailwind CSS
 
 Installation 💻
 
+
 To install and set up this project, simply follow these steps:
 
+
 Clone the repository: 
+
 
     git clone https://github.com/zainabbehzad/space-travelers-hub.git
 
 Navigate to the project directory: 
 
     cd space-travelers-hub 
+    
 
 Install the dependencies: 
 
     npm install  
+    
 
 Start the development server: ```
 
     npm start
+    
 
 Copy
 
+
 Open the app in your browser at
     http://localhost:3000.
+
 
 
 Usage 🎯
@@ -61,6 +73,7 @@ Use the various Markdown formatting options (headings, lists, links, etc.) to fo
 
 
 Contributing 🤝
+
 
 Contributions to this project are welcome! If you'd like to contribute, please follow these steps:
 
@@ -89,9 +102,15 @@ Author 👩‍💻
 - Github: zainabbehzad
 
 
+
+
+
 - LinkedIn: (<https://www.linkedin.com/in/farida-faqiri-071a31309/>)
 - Email: [farida.faqiri2@gmail.com]
 - Github: faridafaqiri
+
+
+
 
 
 - LinkedIn: Khatira Fikrat
