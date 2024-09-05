@@ -1,8 +1,7 @@
-// src/components/Missions.js
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
-import { fetchMissions } from '../redux/missions/missionSlice'; // Correct import path
+import { fetchMissions } from '../redux/missions/missionSlice';
 import Mission from './Mission';
 
 function Missions() {
@@ -12,7 +11,7 @@ function Missions() {
 
   useEffect(() => {
     if (status === 'idle') {
-      dispatch(fetchMissions()); // Correct action usage
+      dispatch(fetchMissions());
     }
   }, [status, dispatch]);
 
@@ -26,10 +25,10 @@ function Missions() {
         <table className="min-w-full border-collapse">
           <thead className="bg-gray-200">
             <tr>
-              <th className="border px-4 py-2 text-left">Mission</th>
-              <th className="border px-4 py-2 text-left">Description</th>
-              <th className="border px-4 py-2 text-left">Status</th>
-              <th className="border px-4 py-2 text-left">Actions</th>
+              <th className="border px-2 sm:px-4 py-2 text-xs sm:text-sm text-left">Mission</th>
+              <th className="border px-2 sm:px-4 py-2 text-xs sm:text-sm text-left">Description</th>
+              <th className="border px-2 sm:px-4 py-2 text-xs sm:text-sm text-left">Status</th>
+              <th className="border px-2 sm:px-4 py-2 text-xs sm:text-sm text-left">Actions</th>
             </tr>
           </thead>
           <tbody>
