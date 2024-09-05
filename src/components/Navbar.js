@@ -32,7 +32,6 @@ const Navbar = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
           </svg>
         </button>
-        {/* Navigation Links */}
         <nav className={`absolute sm:static left-0 w-full sm:w-auto bg-white shadow sm:bg-transparent transition-all duration-300 ${isOpen ? 'top-16' : 'top-[-100%]'}`}>
           <ul className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 list-none p-4 sm:p-0">
             {['/', '/missions', '/dragons', '/myprofile'].map((path) => (
