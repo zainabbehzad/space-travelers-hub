@@ -8,7 +8,7 @@ const Mission = (props) => {
     mission, description, id, reserved,
   } = props;
   const dispatch = useDispatch();
-
+  
   const missionJoin = (id) => {
     dispatch(join(id)); // Dispatch join action
   };

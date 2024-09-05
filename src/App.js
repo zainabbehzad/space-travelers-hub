@@ -11,6 +11,7 @@ import MyProfile from './components/MyProfile';
 import { getDataFromServer } from './redux/Rockets/RocketsSlice';
 import './index.css';
 import Navbar from './components/Navbar';
+import Dragons from './components/Dragons'; 
 
 function App() {
   const dispatch = useDispatch();
