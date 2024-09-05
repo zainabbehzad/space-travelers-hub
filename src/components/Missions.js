@@ -1,7 +1,8 @@
+// src/components/Missions.js
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
-import { fetchMissions } from '../redux/missions/missionSlice';
+import { fetchMissions } from '../redux/missions/missionSlice'; // Correct import path
 import Mission from './Mission';
 
 function Missions() {
@@ -11,7 +12,7 @@ function Missions() {
 
   useEffect(() => {
     if (status === 'idle') {
-      dispatch(fetchMissions());
+      dispatch(fetchMissions()); // Correct action usage
     }
   }, [status, dispatch]);
 
