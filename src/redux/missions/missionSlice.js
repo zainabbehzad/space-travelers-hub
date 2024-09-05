@@ -1,61 +1,52 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissions, join, leave } from '../redux/missions/missionSlice';
+// src/redux/missions/missionSlice.js
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const MissionList = () => {
-  const dispatch = useDispatch();
-  const missions = useSelector((state) => state.missions.missions);
-  const status = useSelector((state) => state.missions.status);
-  const error = useSelector((state) => state.missions.error);
+// Define an async thunk to fetch missions
+export const fetchMissions = createAsyncThunk('missions/fetchMissions', async () => {
+  const response = await fetch('https://api.spacexdata.com/v3/missions');
+  return response.json();
+});
 
-  useEffect(() => {
-    if (status === 'idle') {
-      dispatch(fetchMissions());
-    }
-  }, [status, dispatch]);
+const missionSlice = createSlice({
+  name: 'missions',
+  initialState: {
+    missions: [],
+    status: 'idle', // idle, loading, succeeded, failed
+    error: null,
+  },
+  reducers: {
+    join: (state, action) => {
+      const mission = state.missions.find((mission) => mission.mission_id === action.payload);
+      if (mission) {
+        mission.reserved = true;
+      }
+    },
+    leave: (state, action) => {
+      const mission = state.missions.find((mission) => mission.mission_id === action.payload);
+      if (mission) {
+        mission.reserved = false;
+      }
+    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchMissions.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchMissions.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.missions = action.payload.map((mission) => ({ ...mission, reserved: false }));
+      })
+      .addCase(fetchMissions.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      });
+  },
+});
 
-  return (
-    <div className="container mx-auto p-4">
-      {status === 'loading' && <div className="text-center">Loading...</div>}
-      {status === 'failed' && <div className="text-red-500 text-center">{error}</div>}
-      {status === 'succeeded' && (
-        <table className="min-w-full border-collapse border border-gray-300">
-          <thead>
-            <tr className="bg-gray-200">
-              <th className="border px-4 py-2">Mission</th>
-              <th className="border px-4 py-2">Description</th>
-              <th className="border px-4 py-2">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {missions.map((mission) => (
-              <tr key={mission.mission_id} className="hover:bg-gray-100">
-                <td className="border px-4 py-2">{mission.mission_name}</td>
-                <td className="border px-4 py-2">{mission.description}</td>
-                <td className="border px-4 py-2">
-                  {mission.reserved ? (
-                    <button
-                      onClick={() => dispatch(leave(mission.mission_id))}
-                      className="bg-red-500 text-white rounded px-4 py-2"
-                    >
-                      Leave
-                    </button>
-                  ) : (
-                    <button
-                      onClick={() => dispatch(join(mission.mission_id))}
-                      className="bg-green-500 text-white rounded px-4 py-2"
-                    >
-                      Join
-                    </button>
-                  )}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
-    </div>
-  );
-};
+// Export actions
+export const { join, leave } = missionSlice.actions;
 
-export default MissionList;
+// Export reducer
+export default missionSlice.reducer;
+
