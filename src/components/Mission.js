@@ -51,7 +51,7 @@ const Mission = (props) => {
     </tr>
   );
 };
-
+//join mission//
 Mission.propTypes = {
   id: PropTypes.string.isRequired,
   reserved: PropTypes.bool.isRequired,
