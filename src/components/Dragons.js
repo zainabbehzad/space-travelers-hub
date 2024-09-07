@@ -21,7 +21,6 @@ const Navbar = () => (
               >
                 {path === '/' ? 'Rockets' : path.charAt(1).toUpperCase() + path.slice(2)}
               </NavLink>
-              {/* Vertical Line */}
               <span className="ml-2 h-6 border-l-2 border-transparent transition-all duration-300 group-hover:border-blue-600" />
             </li>
           ))}
