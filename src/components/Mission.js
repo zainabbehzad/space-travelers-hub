@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { join, leave } from '../redux/missions/missionSlice';
 
+// Mission component to display mission details and join/leave buttons
 const Mission = (props) => {
   const {
     mission, description, id, reserved,
