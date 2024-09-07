@@ -25,7 +25,7 @@ Technologies Used 🛠️
 
 - React
 - Redux
--nHTML
+- HTML
 - CSS
 - JavaScript
 - Tailwind CSS
