@@ -23,12 +23,12 @@ Live Dem0:[https://space-travelers-hg9xrp2ct-zainab-behzads-projects.vercel.app
 
 Technologies Used 🛠️
 
-React
-Redux
-HTML
-CSS
-JavaScript
-Tailwind CSS
+- React
+- Redux
+-nHTML
+- CSS
+- JavaScript
+- Tailwind CSS
 
 
 Installation 💻
