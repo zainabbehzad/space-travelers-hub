@@ -1,7 +1,7 @@
 {
   "name": "space-travelers-hub",
   "version": "0.1.0",
-  "homepage": "https://gitname.github.io/space-travelers-hub",
+  "homepage": "https://zainabbehzad.github.io/space-travelers-hub",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.6",

@@ -1,10 +1,10 @@
+import React, { useEffect } from 'react'; // Import useEffect from React
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Routes,
 } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 import Rockets from './components/Rockets';
 import Missions from './components/Missions';
 import MyProfile from './components/MyProfile';
