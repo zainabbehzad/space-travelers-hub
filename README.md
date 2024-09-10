@@ -15,9 +15,7 @@ Demo 📸
 
 
 
-Live Dem0:[https://space-travelers-hg9xrp2ct-zainab-behzads-projects.vercel.app
-]
-
+Check out our live site: [Space Travelers Hub](https://faridafaqiri.github.io/space-travelers-hub/)
 
 
 
