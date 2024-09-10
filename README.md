@@ -14,9 +14,11 @@ Demo 📸
 
 
 
-##
 
-Check out our live site: [Space Travelers Hub](https://faridafaqiri.github.io/space-travelers-hub/)
+# Space Travelers Hub
+
+Check out our live site: <a href="https://faridafaqiri.github.io/space-travelers-hub/" target="_blank">Space Travelers Hub</a>
+
 
 
 
